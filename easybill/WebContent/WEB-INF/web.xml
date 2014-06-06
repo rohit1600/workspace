@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <display-name>EasyBill</display-name>
+    <description>
+        MVC EasyBill
+    </description>
+    <servlet>
+        <servlet-name>  controller-servlet       </servlet-name>
+        <servlet-class>
+            Controller
+        </servlet-class>
+        <init-param>
+            <param-name>    jdbcDriverName          </param-name>
+            <param-value>   com.mysql.jdbc.Driver   </param-value>
+        </init-param>
+        <init-param>
+            <param-name>    jdbcURL                 </param-name>
+            <param-value>   jdbc:mysql:///webapp    </param-value>
+        </init-param>
+    </servlet>
+    <context-param>
+        <param-name> jdbcDriverName </param-name>
+        <param-value> com.mysql.jdbc.Driver </param-value>
+    </context-param>
+    <context-param>
+        <param-name> jdbcURL </param-name>
+        <param-value> jdbc:mysql:///webapp </param-value>
+    </context-param>
+    <servlet-mapping>
+        <servlet-name>  controller-servlet        </servlet-name>
+        <url-pattern>   *.do                     </url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controller-servlet</servlet-name>
+        <url-pattern>/Controller</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>  Controller   </welcome-file>
+    </welcome-file-list>
+</web-app>
